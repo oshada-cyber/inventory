@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Management</title>
+    <link rel="stylesheet" href="https://github.com/oshada-cyber/inventory/blob/main/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+
+<body>
+
+    <h1>Inventory Management System</h1>
+
+    <!-- Form to Add New Item -->
+    <form id="addItemForm">
+        <label for="barcode">Barcode:</label>
+        <input type="text" id="barcode" required>
+
+        <label for="itemName">Item Name:</label>
+        <input type="text" id="itemName" required>
+
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" required>
+
+        <label for="price">Price (LKR):</label>
+        <input type="number" id="price" required>
+
+        <label for="image">Image:</label>
+        <input type="file" id="image" accept="image/*">
+
+        <button type="submit">Add Item</button>
+    </form>
+
+    <!-- Search Bar -->
+    <div class="search-container">
+        <input type="text" id="searchBar" placeholder="Search by barcode or item name">
+    </div>
+
+    <!-- Table for Displaying Inventory -->
+    <table id="stockTable">
+        <thead>
+            <tr>
+                <th>Barcode</th>
+                <th>Item Name</th>
+                <th>Quantity</th>
+                <th>Price (LKR)</th>
+                <th>Image</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Inventory rows will be dynamically inserted here -->
+        </tbody>
+    </table>
+
+    <!-- Daily Cost Table -->
+    <h2>Daily Cost</h2>
+    <table id="dailyCostTable">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Total Cost (LKR)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Daily cost rows will be dynamically inserted here -->
+        </tbody>
+    </table>
+    <!-- Billing System Section -->
+    <div id="billingSection">
+        <h2>Billing System</h2>
+        <table id="billingTable">
+            <thead>
+                <tr>
+                    <th>Item Name</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <p><strong>Total Bill: <span id="totalBillAmount">0.00</span> LKR</strong></p>
+        <button id="generateBillBtn">Generate Bill</button>
+        <button id="clearCartBtn">Clear Cart</button>
+    </div>
+
+
+    <!-- Reset and Save Buttons -->
+    <button id="resetWebsite">Reset Website</button>
+    <button id="saveData">Save Data</button>
+
+    <script src="https://github.com/oshada-cyber/inventory/blob/main/script.js"></script>
+</body>
+
+</html>
